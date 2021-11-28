@@ -75,7 +75,7 @@ import           System.Info
 import           Control.Applicative                  (Alternative ((<|>)))
 import           Data.Void
 
-import           Control.Concurrent.STM               (atomically)
+import           Control.Concurrent.STM.Stats         (atomically)
 import           Control.Concurrent.STM.TQueue
 import           Data.Foldable                        (for_)
 import qualified Data.HashSet                         as Set
