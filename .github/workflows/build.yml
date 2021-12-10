@@ -276,7 +276,9 @@ jobs:
 
   # generates a custom tarball with sources, used by `ghcup compile hls`
   src-tar:
-    needs: build
+    needs:
+      - build-linux
+      - build-mac-win
     runs-on: ubuntu-18.04
 
     steps:
