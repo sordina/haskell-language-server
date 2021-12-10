@@ -312,7 +312,9 @@ jobs:
   # this generates .gz tarfiles containing binaries for all GHC versions and OS's
   # used by `ghcup install hls`
   tar:
-    needs: build
+    needs:
+      - build-linux
+      - build-mac-win
     runs-on: ubuntu-18.04
     strategy:
       matrix:
