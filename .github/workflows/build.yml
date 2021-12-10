@@ -1,9 +1,5 @@
 name: Builds
 
-defaults:
-  run:
-    shell: bash
-
 on:
   release:
     types: [created]
@@ -13,6 +9,9 @@ on:
 
 jobs:
   build-mac-win:
+    defaults:
+      run:
+        shell: bash
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
