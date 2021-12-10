@@ -32,8 +32,6 @@ packages:
 -- See https://github.com/haskell/haskell-language-server/blob/master/.gitlab-ci.yml
 optional-packages: vendored/*/*.cabal
 
-tests: true
-
 package *
   ghc-options: -haddock
   test-show-details: direct
