@@ -378,7 +378,6 @@ test-suite ghcide-tests
         ghc,
         --------------------------------------------------------------
         ghcide,
-        ghc-typelits-knownnat,
         haddock-library,
         lsp,
         lsp-types,

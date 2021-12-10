@@ -4031,19 +4031,6 @@ checkFileCompiles fp diag =
     void (openTestDataDoc (dir </> fp))
     diag
 
-pluginSimpleTests :: TestTree
-pluginSimpleTests =
-  ignoreInWindowsForGHC88And810 $
-  testSessionWithExtraFiles "plugin-knownnat" "simple plugin" $ \dir -> do
-    _ <- openDoc (dir </> "KnownNat.hs") "haskell"
-    liftIO $ writeFile (dir</>"hie.yaml")
-      "cradle: {cabal: [{path: '.', component: 'lib:plugin'}]}"
-
-    expectDiagnostics
-      [ ( "KnownNat.hs",
-          [(DsError, (9, 15), "Variable not in scope: c")]
-          )
-      ]
 
 pluginParsedResultTests :: TestTree
 pluginParsedResultTests =
